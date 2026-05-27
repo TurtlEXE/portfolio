@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tran Nam Anh - Portfolio</title>
+
+    <!-- Initialize Theme before rendering to avoid flash -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <!-- Custom SVG Turtle Logo -->
+                <svg width="45" height="35" viewBox="0 0 100 70" fill="currentColor" stroke="currentColor"
+                    stroke-width="1" class="turtle-icon">
+                    <path d="M 17 38 C 7 38, 7 43, 12 45 Z" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M 22 47 C 10 57, 5 67, 15 67 C 25 67, 30 57, 33 50 Z" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <path d="M 68 47 C 80 62, 75 77, 65 77 C 55 77, 58 62, 62 50 Z" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <path d="M 80 32 C 95 22, 105 27, 95 40 C 90 47, 80 44, 75 42 Z" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <circle cx="88" cy="30" r="2" fill="var(--bg-color)" stroke="none" />
+                    <path d="M 85 37 C 90 40, 93 39, 95 37" stroke="var(--bg-color)" stroke-width="2" fill="none" />
+                    <path
+                        d="M 15 37 C 15 12, 35 4, 50 4 C 65 4, 82 14, 80 32 C 78 50, 65 54, 48 54 C 30 54, 15 47, 15 37 Z"
+                        fill="currentColor" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M 38 10 C 45 10, 48 18, 48 24 C 48 30, 40 32, 35 25 C 32 20, 32 10, 38 10 Z"
+                        fill="var(--bg-color)" stroke="none" />
+                    <path d="M 52 14 C 58 12, 65 18, 65 25 C 65 32, 58 35, 50 32 C 48 30, 48 18, 52 14 Z"
+                        fill="var(--bg-color)" stroke="none" />
+                    <path d="M 25 18 C 30 15, 32 20, 32 26 C 32 30, 28 32, 22 28 C 20 25, 22 20, 25 18 Z"
+                        fill="var(--bg-color)" stroke="none" />
+                    <path d="M 25 35 C 35 30, 42 35, 45 42 C 42 48, 30 48, 25 42 C 22 38, 22 35, 25 35 Z"
+                        fill="var(--bg-color)" stroke="none" />
+                    <path d="M 50 38 C 55 33, 65 33, 70 38 C 72 43, 65 48, 55 48 C 50 48, 48 42, 50 38 Z"
+                        fill="var(--bg-color)" stroke="none" />
+                    <path
+                        d="M 18 37 C 18 15, 35 7, 50 7 C 65 7, 78 16, 77 32 C 75 48, 65 51, 48 51 C 32 51, 18 45, 18 37 Z"
+                        stroke="var(--bg-color)" stroke-width="3" fill="none" />
+                </svg>
+                <span>TurtlEXE</span>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <!-- Dark Mode Icon Toggle -->
+                <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+                    <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </div>
+
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <div class="profile-img-container">
+                <img src="image.jpg" alt="Tran Nam Anh" class="profile-img" id="my-profile-pic">
+            </div>
+
+            <h1 class="name">Tran Nam Anh</h1>
+            <h2 class="role">Software Engineering Student & Backend Developer</h2>
+
+            <div class="social-links">
+                <a href="https://github.com/TurtlEXE" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:trannamanh2004.work@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content glass-card">
+                <p>
+                    I'm Tran Nam Anh from Vietnam!
+                </p>
+                <p>
+                    I love programming, especially backend development, as well as learning new technologies and building scalable systems!
+                </p>
+                <p>
+                    Feel free to get in touch or take a look at my past work below.
+                </p>
+                <div class="education-info">
+                    <h3><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
+                    <ul class="timeline">
+                        <li>
+                            <h4>FPT University</h4>
+                            <span class="date">09/2022 - Present</span>
+                            <p>Major: Software Engineering</p>
+                            <p class="highlight">Current GPA: 8.5/10</p>
+                        </li>
+                        <li>
+                            <h4>English Certifications</h4>
+                            <p>TOEIC Listening & Reading: 860</p>
+                            <p>TOEIC Speaking & Writing: 290</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="skills-header">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Skills</h2>
+                <p class="skills-subtitle">I enjoy diving into and learning new things. Here's a list of technologies I've worked with</p>
+            </div>
+            <div class="skills-3d-grid">
+                <div class="skill-card glass-card">
+                    <i class="fab fa-java skill-icon"></i>
+                    <span>Java</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fab fa-js skill-icon"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-c skill-icon"></i>
+                    <span>C</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <span>HTML / CSS</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fab fa-bootstrap skill-icon"></i>
+                    <span>Bootstrap</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-leaf skill-icon"></i>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-server skill-icon"></i>
+                    <span>Java Servlet</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-network-wired skill-icon"></i>
+                    <span>RESTful API</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-database skill-icon"></i>
+                    <span>SQL Server</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-plug skill-icon"></i>
+                    <span>JDBC</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fab fa-github skill-icon"></i>
+                    <span>Git/Github</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <span>VS Code</span>
+                </div>
+                <div class="skill-card glass-card">
+                    <i class="fa-solid fa-laptop-code skill-icon"></i>
+                    <span>IntelliJ IDEA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-container">
+                <!-- Badminton Project -->
+                <div class="project-card glass-card">
+                    <div class="project-content">
+                        <h3>Badminton Court Booking Web Application</h3>
+                        <p class="project-type">Academic Project</p>
+                        <p class="project-desc">
+                            A web-based badminton court booking system designed with MVC pattern + DAO layer to enhance
+                            maintainability and scalability.
+                        </p>
+                        <ul class="project-features">
+                            <li>Developed using Java Servlet, JDBC, and SQL Server.</li>
+                            <li>Designed REST-style endpoints for booking operations, supporting asynchronous
+                                client-server communication via Fetch API.</li>
+                            <li>Implemented core business logic including slot conflict detection and booking state
+                                validation to prevent double-booking.</li>
+                            <li>Built responsive user interfaces using HTML, CSS, and Bootstrap.</li>
+                            <li>Collaborated in a team environment using Git version control, managing feature updates
+                                and resolving integration conflicts.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Java Servlet</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">HTML / CSS</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">RESTful API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TurtlEXE/badminton-court-booking" target="_blank"
+                                class="btn primary-btn"><i class="fab fa-github"></i> View Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info glass-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to me for any inquiries, collaboration opportunities, or just to say hi!
+                    </p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>trannamanh2004.work@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>0967086619</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Vietnam</span>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/TurtlEXE" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-card"
+                    onsubmit="event.preventDefault(); alert('Message feature is a UI mockup for the portfolio.');">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Tran Nam Anh. Built with HTML, CSS & JavaScript.</p>
+    </footer>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
